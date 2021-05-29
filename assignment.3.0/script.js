@@ -34,16 +34,12 @@ async function register()
     console.log(response);
 
     if(response.ok){
-      alert('you are successfully registered');
+      alert('You are successfully registered.');
     }
     else{
-      alert('you have not been registered due to some error')
+      alert('You have not been registered due to some error. Please try again.')
     }
 }
-
-register.catch(error =>{
-    console.log(error);
-});
 
 //get_data end point
 document.getElementById("thirdbtn").addEventListener("click",getData)
