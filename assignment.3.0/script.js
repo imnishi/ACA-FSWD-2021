@@ -43,6 +43,7 @@ async function register()
 
 //get_data end point
 document.getElementById("thirdbtn").addEventListener("click",getData)
+
 async function getData()
 {
     var givetoken = {
