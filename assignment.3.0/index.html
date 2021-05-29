@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            HTTP headers
+        </title>
+        <style>
+            /*scrollbar css*/
+            /* width */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey; 
+                border-radius: 5px;
+            }
+                
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: rgba(0, 255, 255, 0.692); 
+                border-radius: 10px;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: aqua;
+            }
+
+            /* Style the body */
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(6, 29, 51);
+            }
+
+            /* Style the header */
+            header {
+                background-color: rgba(32, 229, 243, 0.473);
+                border: 2px,solid,aqua;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+
+            /* Style the top fixed navbar */
+            .navbar {
+                overflow: hidden;
+                background-color: rgb(13, 53, 90);
+                position: fixed;
+                top: 0;
+                width: 100%;
+                border: 3px solid black;
+            }
+
+            .navbar a {
+                float: right;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 20px;
+            }
+
+            .navbar a:hover {
+                color: rgba(0, 255, 255, 0.692);
+            }
+
+            .navbar-left {
+                float: left;
+            }
+
+            .main {
+                padding: 16px;
+                margin-top: 30px;
+                height: 1500px; /* Used in this example to enable scrolling */
+            }
+
+            /* Style the footer */
+            footer {
+                background-color: rgb(13, 53, 90);
+                border: 2px solid rgb(0, 255, 255);
+                font-size: larger;
+                padding: 10px;
+                text-align: center;
+                color: aqua;
+            }
+
+            div.forbox {
+                background-color: rgb(13, 53, 90);
+                color: #ddd;
+                width: 750px;
+                text-align: center;
+                margin: auto;
+                padding: 20px 50px ;
+                border: 3px solid aqua;
+            }
+
+            div.forentry {
+                background-color: rgb(6, 29, 51);
+                color: #ddd;
+                width: 300px;
+                text-align: center;
+                margin: auto;
+                border: 3px solid black;
+            }
+
+            .btn{
+                background-color: rgb(6, 29, 51);
+                color: #ddd;
+                width: 150px;
+                text-align: center;
+                margin: auto;
+                border: 3px solid black;
+            }
+
+            .btn:hover{
+                color: rgba(0, 255, 255, 0.692)
+            }
+
+            .center{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            p {
+                color: #ddd;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-left">
+                <a> GPortal</a>
+            </div>
+            <a  href="#getinput">Access data</a>
+            <a  href="#postinput">Sign Up</a>
+            <a  href="#gettoken">Register</a>
+        </div>
+        <br><br><br><br><br>
+        <img class="center" src="download.jpg">
+        <div id="gettoken"></div>
+        <br><br><br>
+
+
+        <div class="forbox">
+            <div style="font-size: x-large; color:aqua"><b>Registration</b></div><br><br>
+            If you are new to this portal first you need to get you auto-generated unique token id, which will be 
+            linked to your data.<br>
+            To generate the token click on the button below.<br><br>
+            
+            <button id="firstbtn" class="btn" onclick="alert('Never share your token number with anyone.')">
+                Generate token
+            </button>
+            
+            <br><br>
+            <div id="tokenhere" class="forentry">Token:</div><br>
+            Remember to sign up asap after you recieve your token.
+        </div>
+
+
+        
+        <div id="postinput"></div>
+        <br><br><br><hr></div><br><br><br>
+
+        <div class="forbox">
+            <div style="font-size: x-large; color:aqua"><b>Sign Up</b></div><br><br>
+            Once you recieve your token number, enter the following details, along with the token in the box below.<br>
+            To generate the token click on the button below.<br><br>
+            <div class="forentry" style="width: 300px;">
+
+
+                <form style="background-color: rgb(6, 29, 51); color: #ddd;">
+
+                    <input style="text-align: center;" type="text" placeholder="Enter your name" id="name"/>
+                    <br><br>
+                    <input style="text-align: center;" type="text" placeholder="Enter the data" id="data"/>
+                    <br><br>
+                    <input style="text-align: center;" type="text" placeholder="Enter the token" id="token"/>
+                    <br><br>
+                    <button id="secondbtn" type="button">
+                        Submit data
+                    </button>
+                    <br>
+                </form>
+
+            </div><br>
+            <br><br>
+            Now you can access your data from this portal using your token number as and when required. 
+        </div>
+        <div id="getinput"></div>
+        <br><br><br><hr><br><br><br>
+
+        <div class="forbox">
+            <div style="font-size: x-large; color:aqua"><b>Access data</b></div><br><br>
+            Enter your token number, and click on the button below to get access of your private data.<br>
+            To generate the token click on the button below.<br><br>
+            <div class="forentry" style="width: 300px;">
+                <form>
+                    <input style="text-align: center;" type="text" placeholder="Enter the token" id="token2"/>
+                    <br><br>
+                    <button id="thirdbtn" type="button">
+                        Get data
+                    </button>
+                </form>
+            </div><br>
+            
+            <br><br>
+            <div id="output" class="forentry">Name:<br>Data:</div><br>
+            Now you can access your data from this portal using your token id as and when required. 
+        </div>
+        <br><br><br>
+        
+        <p>
+            This is portal is designed to store raw data of users that they can store and access based on 
+            security of server generated token.<br> It is strongly adviced to remember the token number, which 
+            means if you lose your token number you lose your stored data indirectly.<br> We also recommend not to 
+            share your token number with anyone until and unless you are very sure about it. If done so they can 
+            access your data.
+        </p>
+        <br><br><br>
+
+        <script src="script.js"></script>
+
+        <footer>
+            !!Thanks for using our portal!!<br>
+            !!Your data is safe here!!
+        </footer><br>
+    </body>
+</html>
