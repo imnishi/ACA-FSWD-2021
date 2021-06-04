@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 
-const leaderrouter = express.Router();
+const leaderRouter = express.Router();
 
-leaderrouter.use(bodyparser.json());
+leaderRouter.use(bodyparser.json());
 
-leaderrouter.route('/')
+leaderRouter.route('/')
 .all((req,res,next) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
@@ -25,25 +25,25 @@ leaderrouter.route('/')
   res.end('Deleting all leaders');
 });
 
-leaderrouter.route('/:leaderid')
+leaderRouter.route('/:leaderId')
 .all((req,res,next) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   next();
 })
 .get((req,res,next) => {
-  res.end('Will send details of the leader: ' + req.params.leaderid +' to you!');
+  res.end('Will send details of the leader: ' + req.params.leaderId +' to you!');
 })
 .post((req, res, next) => {
   res.statusCode = 403;
-  res.end('POST operation not supported on /leaders/'+ req.params.leaderid);
+  res.end('POST operation not supported on /leaders/'+ req.params.leaderId);
 })
 .put((req, res, next) => {
-  res.write('Updating the leader: ' + req.params.leaderid + '\n');
+  res.write('Updating the leader: ' + req.params.leaderId + '\n');
   res.end('Will update the leader: ' + req.body.name + ' with details: ' + req.body.description);
 })
 .delete((req, res, next) => {
-  res.end('Deleting leader: ' + req.params.leaderid);
+  res.end('Deleting leader: ' + req.params.leaderId);
 });
 
-module.exports = leaderrouter;
+module.exports = leaderRouter;
